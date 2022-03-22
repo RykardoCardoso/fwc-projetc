@@ -7,8 +7,8 @@ by Ricardojrhc
 $(function(){
 	
 	//clear Dummy data
-	$('#current-quote').html('');
-	$('#current-quote-author').html('');
+	$('#text').html('');
+	$('#author').html('');
 	$('#current-quote-cat').html('');
 	
 	var currentQuoteIndex = 0;
@@ -46,18 +46,18 @@ $(function(){
 			
 			
 			if(jsonQuotesInfo[getCurrentQuoteIndex].QUOTE.length > 100){
-				$('#current-quote').parent().addClass('small');
+				$('#text').parent().addClass('small');
 			} else {
-				$('#current-quote').parent().removeClass('small');
+				$('#text').parent().removeClass('small');
 			}
 			
-			$('#current-quote').html(jsonQuotesInfo[getCurrentQuoteIndex].QUOTE);
-			$('#current-quote-author').html(jsonQuotesInfo[getCurrentQuoteIndex].AUTHOR);
+			$('#text').html(jsonQuotesInfo[getCurrentQuoteIndex].QUOTE);
+			$('#author').html(jsonQuotesInfo[getCurrentQuoteIndex].AUTHOR);
 			$('#current-quote-cat').html(jsonQuotesInfo[getCurrentQuoteIndex].QUOTE_CAT);
 			
 			//socials
-			$('#twitter-share').attr('href', 'http://twitter.com/share?text=' + encodeURI('"'+jsonQuotesInfo[getCurrentQuoteIndex].QUOTE+'"') + '%20by%20' + encodeURI(jsonQuotesInfo[getCurrentQuoteIndex].AUTHOR));
-			$('#fb-share').attr('href', 'http://www.facebook.com/sharer.php?u=' + encodeURI('"'+jsonQuotesInfo[getCurrentQuoteIndex].QUOTE+'"') + '%20by%20' + encodeURI(jsonQuotesInfo[getCurrentQuoteIndex].AUTHOR));
+			$('#tweet-quote').attr('href', 'https://twitter.com/intent/tweet?text=' + encodeURI('"'+jsonQuotesInfo[getCurrentQuoteIndex].QUOTE+'"') + '%20by%20' + encodeURI(jsonQuotesInfo[getCurrentQuoteIndex].AUTHOR));
+			$('#fb-share').attr('href', 'http://www.facebook.com/sharer.php?u=' + encodeURI('https://rykardocardoso.github.io/fwc-projetc/'));
 			
 			return getCurrentQuoteIndex;
 		}
@@ -65,7 +65,7 @@ $(function(){
 		//Generate first quote
 		currentQuoteIndex = getNewQuote();
 		
-		$('#generate-quote-btn').on('click', function(){
+		$('#new-quote').on('click', function(){
 			if(canIGO){
 				canIGO = false;
 				$('.quote-machine-main-text').addClass('fade-out');

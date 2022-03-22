@@ -445,7 +445,7 @@ footer .social a:hover{
 	line-height: 50px;
 }
 
-#generate-quote-btn {
+#new-quote {
 	position: relative;
 	overflow: hidden;
     width: 100%;
@@ -471,20 +471,20 @@ footer .social a:hover{
 	user-select: none;
 }
 
-#generate-quote-btn:focus{
+#new-quote:focus{
 	border: 0;
 	outline: none;
 }
 
-#generate-quote-btn:hover {
+#new-quote:hover {
     background: #555555;
 }
 
-#generate-quote-btn:active {
+#new-quote:active {
     transform: scale(0.95);
 }
 
-#generate-quote-btn:after {
+#new-quote:after {
   content: '';
   position: absolute;
   top: 50%;
@@ -513,7 +513,7 @@ footer .social a:hover{
   }
 }
 
-#generate-quote-btn:focus:not(:active)::after {
+#new-quote:focus:not(:active)::after {
 	animation: ripple 1s ease-out;
 	animation-fill-mode: forwards;
 }
