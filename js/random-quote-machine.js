@@ -16,7 +16,7 @@ $(function(){
 	//get quotes
 	var today = new Date();
 	var todayTimeStamp = Math.floor(today.getTime() / 1000) + 3600;
-	var quotesInfoURL = "/json/quotes.json";
+	var quotesInfoURL = "../json/quotes.json";
 	var jsonQuotesInfo;
 	var canIGO = true;
 	var timeSwitch;
