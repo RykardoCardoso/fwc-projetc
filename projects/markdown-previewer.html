@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Random Quote Machine - FWC Project - ricardojrhc</title>
+<title>Markdown Previewer - FWC Project - ricardojrhc</title>
 <link rel="apple-touch-icon" sizes="180x180" href="../src/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../src/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../src/favicon-16x16.png">
@@ -8,14 +8,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/normalize.css">
-<link rel="stylesheet" href="../css/rqm-fwc-styles.css">
+<link rel="stylesheet" href="../css/mp-fwc-styles.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
 <script src="../js/jquery-3.6.0.js"></script>
-<script src="../js/random-quote-machine.js"></script>
+<script src="../js/markdown-previewer.js"></script>
 <body id="main">
 <!-- My nav -->
 <nav id="navbar">
@@ -24,7 +24,7 @@
 		<ul>
 			<li><a class="hideMobile" href="../index.html" target="_self"><i class="fa fa-home"></i> HOME</a></li>
 			<li><a class="hideMobile" href="random-quote-machine.html" target="_self"><i class="fa fa-quote-left"></i> Random Quote Machine</a></li>
-			<li><a class="hideMobile" href="markdown-previewer.html" target="_self"><i class="fa fa-newspaper-o"></i> Markdown Previewer</a></li>
+			<li><a class="hideMobile" href="#" target="_self"><i class="fa fa-newspaper-o"></i> Markdown Previewer</a></li>
 			<li><a class="hideMobile" href="#" target="_self"><i class="fa fa-music"></i> Drum Machine</a></li>
 			<li><a class="hideMobile" href="#" target="_self"><i class="fa fa-calculator"></i> JavaScript Calculator</a></li>
 			<li><a class="hideMobile" href="#" target="_self"><i class="fa fa-clock-o"></i> 25 + 5 Clock</a></li>
@@ -36,7 +36,7 @@
 	<div id="navMobile">
 		<a href="../index.html" class="item" target="_self"><i class="fa fa-home"></i> HOME</a>
     	<a href="random-quote-machine.html" class="item" target="_self"><i class="fa fa-quote-left"></i> Random Quote Machine</a>
-    	<a href="markdown-previewer.html" class="item" target="_self"><i class="fa fa-newspaper-o"></i> Markdown Previewer</a>
+    	<a href="#" class="item" target="_self"><i class="fa fa-newspaper-o"></i> Markdown Previewer</a>
     	<a href="#" class="item" target="_self"><i class="fa fa-music"></i> Drum Machine</a>
     	<a href="#" class="item" target="_self"><i class="fa fa-calculator"></i> JavaScript Calculator</a>
 		<a href="#" class="item" target="_self"><i class="fa fa-clock-o"></i> 25 + 5 Clock</a>
@@ -47,24 +47,27 @@
 <section class="featureSection" id="welcome-section">
 	<div class="mySlides" style="background-image: url('../images/RIC_LOGO_bg.png');">
 		<figcaption>
-			<div class="quote-machine" id="quote-box">
-				<div class="quote-machine-main">
-					<div class="quote-machine-main-text">
-						<h4><span id="current-quote-cat"></span></h4>
-						<h2><i class="fa fa-quote-left"></i> <span id="text"></span> <i class="fa fa-quote-right"></i></h2>
-						<h3>— <span id="author"></span></h3>
-					</div>
-					<div class="quote-machine-main-socials">
-						<a class="social-btn" id="tweet-quote" href="#" target="_blank"><i class="fa fa-twitter-square"></i></a>
-						<a class="social-btn" id="fb-share" href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
-					</div>
-					<button id="new-quote">New quote</button>
-				</div>
-			</div>
 			<div class="title">
-				<h3><i>Random Quote Machine</i></h3>
+				<h3><i>Markdown Previewer</i></h3>
 				<p>by Ricardojrhc</p>
 			</div>
+			<div class="markdown-previewer" id="app">
+				<div class="editor-main">
+					<div class="editor-title">
+						<h2><i class="fa fa-free-code-camp"></i> Editor</h2>
+						<span id="editor-expander"><i class="fa fa-expand"></i></span>
+					</div>
+					<textarea id="editor" type="text"></textarea>
+				</div>
+				<div class="previewer-main">
+					<div class="previewer-title">
+						<h2><i class="fa fa-free-code-camp"></i> Previewer</h2>
+						<span id="previewer-expander"><i class="fa fa-expand"></i></span>
+					</div>
+					<div id="preview">coisas aqui</div>
+				</div>
+			</div>
+			<span class="clearfix"></span>
 		</figcaption>
 	</div>
 </section>
@@ -108,12 +111,6 @@ $('.toTop').click(function(event) {
 
 });
 </script>
-	
-	
-<script>
-	
-</script>
-	
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
