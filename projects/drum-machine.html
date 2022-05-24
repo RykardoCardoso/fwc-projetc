@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<title>Drum Machine - FWC Project - ricardojrhc</title>
+<link rel="apple-touch-icon" sizes="180x180" href="../src/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../src/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../src/favicon-16x16.png">
+<link rel="manifest" href="../src/site.webmanifest">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/dm-fwc-styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/react.development.js"></script>
+<script src="../js/react-dom.development.js"></script>
+<script src="../js/drum-machine.js"></script>
+<body>
+<!-- My nav -->
+<nav id="navbar">
+	<div class="links">
+		<a class="logo" href="../index.html" target="_self"><img width="100%" src="../images/RIC_LOGO_W.svg" alt="RIC"></a>
+		<ul>
+			<li><a class="hideMobile" href="../index.html" target="_self"><i class="fa fa-home"></i> HOME</a></li>
+			<li><a class="hideMobile" href="random-quote-machine.html" target="_self"><i class="fa fa-quote-left"></i> Random Quote Machine</a></li>
+			<li><a class="hideMobile" href="markdown-previewer.html" target="_self"><i class="fa fa-newspaper-o"></i> Markdown Previewer</a></li>
+			<li><a class="hideMobile" href="drum-machine.html" target="_self"><i class="fa fa-music"></i> Drum Machine</a></li>
+			<li><a class="hideMobile" href="#" target="_self"><i class="fa fa-calculator"></i> JavaScript Calculator</a></li>
+			<li><a class="hideMobile" href="#" target="_self"><i class="fa fa-clock-o"></i> 25 + 5 Clock</a></li>
+			<li><a class="mobileMenuButton" href="#" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a></li>
+		</ul>
+	</div>
+    
+    <!-- Navbar on small screens -->
+	<div id="navMobile">
+		<a href="../index.html" class="item" target="_self"><i class="fa fa-home"></i> HOME</a>
+    	<a href="random-quote-machine.html" class="item" target="_self"><i class="fa fa-quote-left"></i> Random Quote Machine</a>
+    	<a href="markdown-previewer.html" class="item" target="_self"><i class="fa fa-newspaper-o"></i> Markdown Previewer</a>
+    	<a href="drum-machine.html" class="item" target="_self"><i class="fa fa-music"></i> Drum Machine</a>
+    	<a href="#" class="item" target="_self"><i class="fa fa-calculator"></i> JavaScript Calculator</a>
+		<a href="#" class="item" target="_self"><i class="fa fa-clock-o"></i> 25 + 5 Clock</a>
+	</div>
+</nav>
+
+<!-- First Parallax Image with Logo Text -->
+<section class="featureSection" id="welcome-section">
+	<div class="mySlides" style="background-image: url('../images/RIC_LOGO_bg.png');">
+		<figcaption>
+			<div class="title">
+				<h3><i>Drum Machine</i></h3>
+				<p>by Ricardojrhc</p>
+			</div>
+			<div class="drum-machine-main" id="drum-machine">
+                <div class="drum-machine-header">
+                    <div class="brand">
+                        <img src="../images/RIC_LOGO_W.svg" alt="RIC">
+                    </div>
+                    <div class="power-switch">
+                        <a id="power-sw" class="power-sw active"><img src="../images/power-on.png" alt="I/O"><img class="glow" src="../images/power-on-active.png" alt="I/O"></a>
+                    </div>
+                </div>
+                <div class="drum-machine-display-and-bank">
+                    <div class="display-container">
+                        <div class="display-screen active">
+                            <div id="bank-name">
+                                BANK1
+                            </div>
+                            <div id="current-sample">
+                                Kick 1
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="controls-container">
+                        <div class="bank-bt-container">
+                            <p>Bank 1</p>
+                            <input type="button" class="bt-bank" id="bank1">
+                        </div>
+                        <div class="bank-bt-container">
+                            <p>Bank 2</p>
+                            <input type="button" class="bt-bank" id="bank2">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drum-machine-sounds-main">
+                    <div class="drum-machine-sounds" id="drum-machine">
+                        <div class="pad-bank">
+                            <div class="drum-pad" id="Chord-1">
+                                <audio class="clip" id="Q" src="https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3"></audio>
+                                <!-- inner text -->Q<!-- /inner text -->
+                            </div>
+                            <div class="drum-pad" id="Chord-2">
+                                <audio class="clip" id="W" src="https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3"></audio>
+                                <!-- inner text -->W<!-- /inner text -->
+                            </div>
+                            <div class="drum-pad" id="Chord-3" >
+                                <audio class="clip" id="E" src="https://s3.amazonaws.com/freecodecamp/drums/Chord_3.mp3"></audio>
+                                <!-- inner text -->E<!-- /inner text -->
+                            </div>
+                            <div class="drum-pad" id="Shaker">
+                                <audio class="clip" id="A" src="https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3"></audio>
+                                <!-- inner text -->A<!-- /inner text -->
+                            </div>
+                            <div class="drum-pad" id="Open-HH">
+                                <audio class="clip" id="S" src="https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3"></audio>
+                                <!-- inner text -->S<!-- /inner text -->
+                            </div>
+                            <div class="drum-pad" id="Closed-HH">
+                                <audio class="clip" id="D" src="https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3"></audio>
+                                <!-- inner text -->D<!-- /inner text -->
+                            </div>
+                            <div class="drum-pad" id="Punchy-Kick">
+                                <audio class="clip" id="Z" src="https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3"></audio>
+                                <!-- inner text -->Z<!-- /inner text -->
+                            </div>
+                            <div class="drum-pad" id="Side-Stick">
+                                <audio class="clip" id="X" src="https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3"></audio>
+                                <!-- inner text -->X<!-- /inner text -->
+                            </div>
+                            <div class="drum-pad" id="Snare">
+                                <audio class="clip" id="C" src="https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3"></audio>
+                                <!-- inner text -->C<!-- /inner text -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="volume-control">
+                        <div class="range-slider">
+                            <input value="90" type="range" orient="vertical" min="0" max="100" />
+                            <div class="range-slider__bar"></div>
+                            <div class="range-slider__thumb"></div>
+                            <p class="range-title">Volume</p>
+                        </div>
+                    </div>
+                </div>
+			</div>
+			<span class="clearfix"></span>
+		</figcaption>
+	</div>
+</section>
+
+<footer>
+	<a class="toTop"><i style="margin-right: 15px;" class="fa fa-arrow-up"></i>To the top</a>
+	<div class="social">
+		<a href="https://www.facebook.com/RykardoMusic/" target="_blank"><i class="fa fa-facebook-official"></i></a>
+		<a href="https://www.linkedin.com/in/ricardojrhc/" target="_blank"><i class="fa fa-linkedin"></i></a>
+	</div>
+</footer>
+
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

@@ -321,7 +321,7 @@ footer .social a:hover{
 }
 
 .markdown-previewer .editor-main .editor-title #editor-expander{
-	display: inline-block;
+	display: block;
 	padding: 2px 5px;
 	margin: 0;
 	font-size: 18px;
@@ -377,7 +377,7 @@ footer .social a:hover{
 }
 
 .markdown-previewer .previewer-main .previewer-title #previewer-expander{
-	display: inline-block;
+	display: block;
 	padding: 2px 5px;
 	margin: 0;
 	font-size: 18px;
