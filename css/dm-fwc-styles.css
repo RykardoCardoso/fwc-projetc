@@ -562,6 +562,7 @@ footer .social a:hover{
 	outline: 0;
     padding: 0 5px;
 	transform: rotate(270deg);
+	z-index: 10;
 }
 
 .drum-machine-main .drum-machine-sounds-main .volume-control .range-slider .range-title{
@@ -573,6 +574,7 @@ footer .social a:hover{
 	text-align: center;
 	color: #FFFFFF;
 	font-size: 12px;
+	z-index: 0;
 }
 
 input[type=range] {
@@ -610,18 +612,18 @@ input[type=range] {
 	height: 6px;
 	cursor: pointer;
 	box-shadow: 0px 0px 1px #000000;
-	background: #3071A9;
+	background: #000000;
 	border-radius: 20px;
 	border: 0px solid #000000;
   }
   input[type=range]::-moz-range-thumb {
-	box-shadow: 2px 2px 1px #000000;
-	border: 1px solid #000000;
+	box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
 	height: 44px;
-	width: 16px;
-	border-radius: 16px;
-	background: #FFFFFF;
+	width: 20px;
+	border-radius: 5px;
+	background: #494949;
 	cursor: pointer;
+	border: 0;
   }
   input[type=range]::-ms-track {
 	width: 100%;
@@ -632,13 +634,13 @@ input[type=range] {
 	color: transparent;
   }
   input[type=range]::-ms-fill-lower {
-	background: #3071A9;
+	background: #000000;
 	border: 0px solid #000000;
 	border-radius: 40px;
 	box-shadow: 0px 0px 1px #000000;
   }
   input[type=range]::-ms-fill-upper {
-	background: #3071A9;
+	background: #000000;
 	border: 0px solid #000000;
 	border-radius: 40px;
 	box-shadow: 0px 0px 1px #000000;
@@ -653,10 +655,10 @@ input[type=range] {
 	cursor: pointer;
   }
   input[type=range]:focus::-ms-fill-lower {
-	background: #3071A9;
+	background: #000000;
   }
   input[type=range]:focus::-ms-fill-upper {
-	background: #3071A9;
+	background: #000000;
   }
 
 .drum-machine-main .drum-machine-sounds-main .pad-bank{
@@ -694,6 +696,110 @@ input[type=range] {
 
 .drum-machine-main .drum-machine-sounds-main .pad-bank .drum-pad:hover{
 	background: rgb(255,255,255,0.1);
+}
+
+
+/*****************/
+
+.markdown-previewer .editor-main .editor-title{
+	display: block;
+	width: 100%;
+	padding: 5px 15px;
+	margin: 0;
+	background-color: #1D1D1D;
+	color: #FFFFFF;
+	text-align: left;
+}
+
+.markdown-previewer .editor-main .editor-title h2{
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	font-size: 18px;
+	line-height: 24px;
+	color: #FFFFFF;
+}
+
+.markdown-previewer .editor-main .editor-title #editor-expander{
+	display: block;
+	padding: 2px 5px;
+	margin: 0;
+	font-size: 18px;
+	line-height: 24px;
+	color: #FFFFFF;
+	float: right;
+	cursor: pointer;
+}
+
+.markdown-previewer .editor-main #editor{
+	display: block;
+	width: 100%;
+	min-height: 200px;
+	padding: 15px 15px;
+	margin: 0;
+	font-size: 16px;
+	line-height: 20px;
+	color: #000000;
+	outline: none;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+
+.markdown-previewer .previewer-main{
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 50px auto 25px auto;
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+	overflow: hidden;
+}
+
+.markdown-previewer .previewer-main .previewer-title{
+	display: block;
+	width: 100%;
+	padding: 5px 15px;
+	margin: 0;
+	background-color: #1D1D1D;
+	color: #FFFFFF;
+	text-align: left;
+}
+
+.markdown-previewer .previewer-main .previewer-title h2{
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	font-size: 18px;
+	line-height: 24px;
+	color: #FFFFFF;
+}
+
+.markdown-previewer .previewer-main .previewer-title #previewer-expander{
+	display: block;
+	padding: 2px 5px;
+	margin: 0;
+	font-size: 18px;
+	line-height: 24px;
+	color: #FFFFFF;
+	float: right;
+	cursor: pointer;
+}
+
+.markdown-previewer .previewer-main #preview{
+	display: block;
+	width: 100%;
+	min-height: 300px;
+	padding: 15px 15px;
+	margin: 0;
+	font-size: 16px;
+	line-height: 20px;
+	color: #000000;
+	outline: none;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	text-align: left;
 }
 
 

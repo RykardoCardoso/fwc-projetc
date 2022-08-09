@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Random Quote Machine - FWC Project - ricardojrhc</title>
+<title>Javascript Calculator - FWC Project - ricardojrhc</title>
 <link rel="apple-touch-icon" sizes="180x180" href="../src/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../src/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../src/favicon-16x16.png">
@@ -8,15 +8,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/normalize.css">
-<link rel="stylesheet" href="../css/rqm-fwc-styles.css">
+<link rel="stylesheet" href="../css/calc-fwc-styles.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <script src="../js/jquery-3.6.0.js"></script>
-<script src="../js/random-quote-machine.js"></script>
-<body id="main">
+<script src="../js/react.development.js"></script>
+<script src="../js/react-dom.development.js"></script>
+<script src="../js/drum-machine.js"></script>
+<body>
 <!-- My nav -->
 <nav id="navbar">
 	<div class="links">
@@ -47,24 +49,58 @@
 <section class="featureSection" id="welcome-section">
 	<div class="mySlides" style="background-image: url('../images/RIC_LOGO_bg.png');">
 		<figcaption>
-			<div class="quote-machine" id="quote-box">
-				<div class="quote-machine-main">
-					<div class="quote-machine-main-text">
-						<h4><span id="current-quote-cat"></span></h4>
-						<h2><i class="fa fa-quote-left"></i> <span id="text"></span> <i class="fa fa-quote-right"></i></h2>
-						<h3>— <span id="author"></span></h3>
-					</div>
-					<div class="quote-machine-main-socials">
-						<a class="social-btn" id="tweet-quote" href="#" target="_blank"><i class="fa fa-twitter-square"></i></a>
-						<a class="social-btn" id="fb-share" href="#" target="_blank"><i class="fa fa-facebook-official"></i></a>
-					</div>
-					<button id="new-quote">New quote</button>
-				</div>
-			</div>
 			<div class="title">
-				<h3><i>Random Quote Machine</i></h3>
+				<h3><i>Javascript Calculator</i></h3>
 				<p>by Ricardojrhc</p>
 			</div>
+			<div class="calculator-main" id="calculator">
+                <div class="calculator-header">
+                    <div class="brand">
+                        <img src="../images/RIC_LOGO_W.svg" alt="RIC">
+                    </div>
+                    <div class="power-switch">
+                        <a id="power-sw" class="power-sw active"><img src="../images/power-on.png" alt="I/O"><img class="glow" src="../images/power-on-active.png" alt="I/O"></a>
+                    </div>
+                </div>
+                <div class="calculator-display-and-history">
+                    <div class="display-container">
+                        <div class="display-screen active">
+                            <div id="history-content">
+                                2 + 2
+                            </div>
+                            <div id="current-result">
+                                4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-sounds-main">
+                    <div class="calculator-sounds">
+                        <div class="pad-history">
+                            <div class="key-pad" data-key-value="C">C</div>
+                            <div class="key-pad" data-key-value="CE">CE</div>
+                            <div class="key-pad" data-key-value="/">&#247;</div>
+                            <div class="key-pad" data-key-value="*">&#215;</div>
+                            <div class="key-pad" data-key-value="1">1</div>
+                            <div class="key-pad" data-key-value="2">2</div>
+                            <div class="key-pad" data-key-value="3">3</div>
+                            <div class="key-pad" data-key-value="-">&#8722;</div>
+                            <div class="key-pad" data-key-value="4">4</div>
+                            <div class="key-pad" data-key-value="5">5</div>
+                            <div class="key-pad" data-key-value="6">6</div>
+                            <div class="key-pad" data-key-value="+">&plus;</div>
+                            <div class="key-pad" data-key-value="7">7</div>
+                            <div class="key-pad" data-key-value="8">8</div>
+                            <div class="key-pad" data-key-value="9">9</div>
+                            <div class="key-pad equals" data-key-value="=">&equals;</div>
+                            <div class="key-pad zero" data-key-value="0">0</div>
+                            <div class="key-pad" data-key-value=".">.</div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+			<span class="clearfix"></span>
 		</figcaption>
 	</div>
 </section>
@@ -76,44 +112,7 @@
 		<a href="https://www.linkedin.com/in/ricardojrhc/" target="_blank"><i class="fa fa-linkedin"></i></a>
 	</div>
 </footer>
- 
-<script>
-$(function(){
-	
-// Used to toggle the menu on small screens when clicking on the menu button
-$('.mobileMenuButton').click(function(event){
-	event.preventDefault();
-	toggleMenuMobile();
-});
 
-$('#navMobile a').click(function(){
-	toggleMenuMobile();
-});
-
-function toggleMenuMobile() {
-    var x = document.getElementById("navMobile");
-    if (x.className.indexOf("active") == -1) {
-        x.className += "active";
-    } else {
-        x.className = x.className.replace("active", "");
-    }
-}
-	
-//Smooth Scroll Up function
-$('.toTop').click(function(event) {
-	event.preventDefault();
-	$('html, body').animate({scrollTop: 0}, 500, "swing");
-		return false;
-});
-
-});
-</script>
-	
-	
-<script>
-	
-</script>
-	
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
